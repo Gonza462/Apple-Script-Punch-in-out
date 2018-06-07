@@ -1,0 +1,30 @@
+
+set username to "username"
+set _password to "password"
+
+tell application "Safari"
+	set new_document to make new document with properties {URL:"https://www.paycomonline.net/v4/ee/web.php/app/login"}
+
+
+end tell
+
+tell application "System Events"
+	delay 3
+	keystroke "TYPE USER NAME HERE"
+	keystroke tab
+	delay 1
+	keystroke "TYPE PASSWORD HERE"
+	keystroke tab
+	delay 1
+	keystroke "IF THERE IS OTHER FIELD TYPE HERE OTHERWISE DELETE"
+	delay 1
+	keystroke return
+	delay 2
+end tell
+
+tell application "Safari"
+	activate
+	do JavaScript "document.getElementsByClassName('circle quickPunch white-text material-icons md-24 schedule ')[0].click();" in document 1
+	delay 1
+	do JavaScript "document.getElementsByClassName(' btn--primary punch-button btn waves-effect waves-light')[0].click();" in document 1
+end tell
